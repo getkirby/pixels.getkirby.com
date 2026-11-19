@@ -2,16 +2,24 @@
 	"name": "getkirby/pixels",
 	"description": "Social media graphics for Kirby",
 	"type": "project",
-	"homepage": "https://pixels.getkirby.com",
 	"require": {
-		"php": "~8.4.0 || ~8.5.0",
-		"getkirby/cms": "^5.5"
+		"php": "~8.5.0",
+    "getkirby/cms": "6.0.0-rc.2"
 	},
-	"scripts": {
-		"run": "php -S localhost:8181 kirby/router.php",
-		"fix": "cpx getkirby/php-cs:^0.2 fix"
-	},
-	"config": {
-		"optimize-autoloader": true
-	}
+  "config": {
+    "allow-plugins": {
+      "getkirby/composer-installer": true
+    },
+    "optimize-autoloader": true
+  },
+  "extra": {
+    "kirby-cms-path": false
+  },
+  "scripts": {
+    "fix": "cpx getkirby/php-cs:^0.2 fix",
+    "start": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php -S localhost:8000 -t public vendor/getkirby/cms/router.php"
+    ]
+  }
 }

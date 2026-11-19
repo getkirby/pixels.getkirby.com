@@ -10,7 +10,7 @@ if (function_exists('icon') === false) {
 
 		// fall back to Panel icons
 		static $panel;
-		$panel ??= svg('kirby/panel/dist/img/icons.svg');
+		$panel ??= svg(kirby()->root('kirby') . '/panel/dist/img/icons.svg');
 
 		if ($panel) {
 			// find the icon in the Panel sprite
