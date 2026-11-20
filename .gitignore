@@ -1,18 +1,19 @@
 # System files
 # ------------
-
 Icon
 .DS_Store
 
 # Temporary files
 # ---------------
-
-/assets/dist
 /.php-cs-fixer.cache
-/media/*
-!/media/index.html
+/public/media/*
+!/public/media/index.html
 /node_modules/
-/site/config/buy.ppp.php
+/site/plugins/*/node_modules/
+
+# Unsaved content
+# ---------------
+/content/**/_changes/
 
 # Editors
 # ---------------
@@ -23,7 +24,6 @@ Icon
 
 # Plugin cruft
 # ---------------
-
 /site/plugins/*/vendor/**/.*
 /site/plugins/*/vendor/**/*.json
 /site/plugins/*/vendor/**/*.txt
@@ -47,6 +47,12 @@ Icon
 /site/plugins/*/vendor/**/php4/*
 /site/plugins/ray
 
+# Composer
+# ---------------
+/vendor/
+/site/plugins/discord/
+# Kirby lives in vendor/ now; keeps leftovers of the old kirby/ folder out of git
+/kirby/
 
 # Lock files
 # ---------------
@@ -58,27 +64,32 @@ Icon
 
 # Cache Files
 # ---------------
-
 /site/cache/*
 !/site/cache/index.html
 
 # Config
 # ------
-
 /site/config/keys.php
+/.claude/
 
 # Accounts
 # ---------------
-
 /site/accounts/*
 !/site/accounts/index.html
 
 # Sessions
 # ---------------
-
 /site/sessions/*
 !/site/sessions/index.html
 
 # License
 # ---------------
 /site/config/.license
+
+# Basic auth users
+# ---------------
+/site/config/users.php
+
+# Import scripts
+# ---------------
+import

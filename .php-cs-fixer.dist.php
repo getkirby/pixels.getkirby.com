@@ -5,6 +5,9 @@ return Kirby\PhpCs\Config::create()->setFinder(
 		->exclude('accounts')
 		->exclude('cache')
 		->exclude('sessions')
+		->exclude('vendor')
 		->in(__DIR__ . '/site')
-		->append([__DIR__ . '/index.php'])
+		->append([
+			__DIR__ . '/public/index.php'
+		])
 );
